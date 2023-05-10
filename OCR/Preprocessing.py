@@ -51,3 +51,12 @@ def deskew(image):
 #template matching
 def match_template(image, template):
     return cv2.matchTemplate(image, template, cv2.TM_CCOEFF_NORMED) 
+
+
+
+image = cv2.imread('page_01.jpg')
+
+gray = get_grayscale(image)
+thresh = thresholding(gray)
+opening = opening(gray)
+canny = canny(gray)
